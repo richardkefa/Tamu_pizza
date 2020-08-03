@@ -80,7 +80,8 @@ $(document).ready(function(){
       default:
         alert("select your topping");
     }
-
+    var total=(price+crust_price+topping_cost)*pizzaquantity;
+    console.log(total)
 
     event.preventDefault();
   });
