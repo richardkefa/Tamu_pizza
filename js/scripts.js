@@ -16,3 +16,13 @@ function Delivery(name,phone,location){
 });
 
 
+//User inerface logic
+$(document).ready(function(){
+  $('input[name=delivery]').change(function(){
+    if($(this).is(':checked')) {
+      $("#delivery-address").show();
+    } else {
+      $("#delivery-address").hide();
+    }
+});
+});
