@@ -36,7 +36,13 @@ $(document).ready(function(){
 
     var newOrder= new Order(pizzatype,pizzacrust,pizzatopping,pizzasize,pizzaquantity);
 
-   
+    $("#checkout").show();
+    $(".pizza-type").text(newOrder.pizzatype);
+    $(".pizza-crust").text(newOrder.pizzacrust);
+    $(".pizza-topping").text(newOrder.pizzatopping);
+    $(".pizza.size").text(newOrder.pizzasize);
+    $(".pizza.quantity").text(newOrder.pizzaquantity);
+
     event.preventDefault();
   });
 })
