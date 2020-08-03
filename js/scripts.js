@@ -6,11 +6,11 @@ $(document).ready(function(){
     this.pizzasize=size;
     this.pizzaquantity=quantity;
     this.deliveryaddress=[];
+  };
   function Delivery(name,phone,location){
     this.customerName=name;
     this.telNumber=phone;
     this.delivaryLocation=location;
-  }
   };
 
 
@@ -30,6 +30,11 @@ $(document).ready(function(){
     var pizzatopping=$("#pizzatopping option:selected").val();
     var pizzasize =$("#pizzasize option:selected").val();
     var pizzaquantity =parseInt(document.getElementById("quantity").value);
+    var customerName=$("input#name").val();
+    var customerPhone=$("input#phonenumber").val();
+    var customerLocation=$("input#location").val();
+    var newAddress= new Delivery(customerName,customerPhone,customerLocation);
+    newOrder.deliveryaddress.push(newAddress);
 
     var newOrder= new Order(pizzatype,pizzacrust,pizzatopping,pizzasize,pizzaquantity);
 
@@ -39,7 +44,10 @@ $(document).ready(function(){
     $(".pizza-topping").text(newOrder.pizzatopping);
     $(".pizza-size").text(newOrder.pizzasize);
     $(".pizza-quantity").text(newOrder.pizzaquantity);
-    $(".pizza-cost").text(total);
+    newOrder.deliveryaddress.forEach(function(address){
+      $(".delivery-info").text(address.customerName+""+address.customerPhone+""+address.delivaryLocation)
+    })
+    
 
     switch (pizzasize){
       case "large":
@@ -82,6 +90,7 @@ $(document).ready(function(){
     }
     var total=(price+crust_price+topping_cost)*pizzaquantity;
     console.log(total)
+    $(".pizza-cost").text(total);
 
     event.preventDefault();
   });
