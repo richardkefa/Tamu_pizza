@@ -26,3 +26,17 @@ $(document).ready(function(){
     }
 });
 });
+$(document).ready(function(){
+  $("#checkoutbtn").click(function(event){
+    var pizzatype =$("select#pizzatype").val();
+    var pizzacrust =$("select#pizzacrust").val();
+    var pizzatopping=$("select#pizzatopping").val();
+    var pizzasize =$("select#pizzasize").val();
+    var pizzaquantity =parseInt($("#pizzaquantity").val());
+
+    var newOrder= new Order(pizzatype,pizzacrust,pizzatopping,pizzasize,pizzaquantity);
+
+   
+    event.preventDefault();
+  });
+})
