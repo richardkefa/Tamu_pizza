@@ -48,6 +48,6 @@ input select{
   display: none;
 }
 
-#checkout{
+#checkout, #deliveryinfo{
   display: none;
 }

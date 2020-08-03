@@ -9,7 +9,7 @@ $(document).ready(function(){
   };
   function Delivery(name,phone,location){
     this.customerName=name;
-    this.telNumber=phone;
+    this.customerPhone=phone;
     this.delivaryLocation=location;
   };
 
@@ -31,12 +31,13 @@ $(document).ready(function(){
     var pizzasize =$("#pizzasize option:selected").val();
     var pizzaquantity =parseInt(document.getElementById("quantity").value);
     var customerName=$("input#name").val();
-    var customerPhone=$("input#phonenumber").val();
+    var customerPhone=document.getElementById("phonenumber").value;
     var customerLocation=$("input#location").val();
+    var newOrder= new Order(pizzatype,pizzacrust,pizzatopping,pizzasize,pizzaquantity);
     var newAddress= new Delivery(customerName,customerPhone,customerLocation);
     newOrder.deliveryaddress.push(newAddress);
-
-    var newOrder= new Order(pizzatype,pizzacrust,pizzatopping,pizzasize,pizzaquantity);
+    console.log(customerPhone)
+    
 
     $("#checkout").show();
     $(".pizza-type").text(newOrder.pizzatype);
@@ -45,7 +46,7 @@ $(document).ready(function(){
     $(".pizza-size").text(newOrder.pizzasize);
     $(".pizza-quantity").text(newOrder.pizzaquantity);
     newOrder.deliveryaddress.forEach(function(address){
-      $(".delivery-info").text(address.customerName+""+address.customerPhone+""+address.delivaryLocation)
+      $(".delivery-info").text(address.customerName+" "+ address.customerPhone +" "+address.delivaryLocation)
     })
     
 
@@ -89,9 +90,20 @@ $(document).ready(function(){
         alert("select your topping");
     }
     var total=(price+crust_price+topping_cost)*pizzaquantity;
-    console.log(total)
-    $(".pizza-cost").text(total);
-
+    
+    if (document.getElementById("delivery").checked){
+      var checkoutTotal=total+300;
+      $(".pizza-cost").text(checkoutTotal);
+      $("#deliveryinfo").show();
+    }
+    else {
+      $(".pizza-cost").text(total);
+    }
+    $("#confirmorder").click(function(event){
+      alert("we have recieved your order")
+      
+    })
+    
     event.preventDefault();
   });
   
