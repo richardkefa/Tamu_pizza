@@ -100,7 +100,8 @@ $(document).ready(function(){
       $(".pizza-cost").text(total);
     }
     $("#confirmorder").click(function(event){
-      alert("we have recieved your order")
+      alert("we have recieved your order");
+      $("#checkout").hide();
       
     })
     

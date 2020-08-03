@@ -5,7 +5,9 @@
 ## Description 
 This is version !.0 of tamu pizza system. The system allows customers to make orders on pizza.
 They can choose the different piza types toppings and crust.
-There is also an option of getting the pizza delivered to there location 
+There is also an option of getting the pizza delivered to there location.
+https://richardkefa.github.io/Tamu_pizza/
+
 ## User instructions 
 * Open the web page.
 * choose the pizza type, topping, crust and quantity
