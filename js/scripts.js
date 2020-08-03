@@ -101,6 +101,7 @@ $(document).ready(function(){
     }
     $("#confirmorder").click(function(event){
       alert("we have recieved your order")
+      $("#checkout").hide()
       
     })
     
