@@ -51,3 +51,13 @@ input select{
 #checkout, #deliveryinfo{
   display: none;
 }
+#checkout {
+  border: solid 2px tomato;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+h3 {
+  text-align: center;
+  color: tomato;
+}
