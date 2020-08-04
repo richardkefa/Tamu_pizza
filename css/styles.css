@@ -66,3 +66,7 @@ h3 {
   text-align: center;
   color: tomato;
 }
+.contacts {
+  display: flex;
+  justify-content: space-evenly;
+}
